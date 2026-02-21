@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Password Sentinel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific tweaks for text page */
+        body { background: var(--bg-body); }
+        .privacy-header { text-align: center; padding: 60px 0 40px; }
+        .privacy-header h1 { font-size: 36px; margin-bottom: 10px; }
+        
+        .content-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 60px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 60px;
+            border: 1px solid var(--border-light);
+        }
+
+        .policy-section { margin-bottom: 40px; }
+        .policy-section h2 { color: var(--primary); font-size: 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .policy-section p { color: var(--text-secondary); margin-bottom: 12px; }
+        
+        .badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 4px 10px; border-radius: var(--radius-pill);
+            font-size: 13px; font-weight: 500; margin-right: 8px; margin-bottom: 8px;
+        }
+        .badge.safe { background: rgba(52, 199, 89, 0.1); color: var(--success); }
+        .badge.danger { background: rgba(255, 59, 48, 0.1); color: var(--danger); }
+        .badge.neutral { background: #F5F5F7; color: var(--text-secondary); }
+
+        ul { margin-left: 20px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; color: var(--text-main); font-size: 15px; }
+
+        @media (max-width: 768px) {
+            .content-card { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar" style="margin-bottom: 0;">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">Password Sentinel</span>
+            </a>
+            <a href="index.html" class="nav-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="privacy-header">
+            <h1>Privacy Policy</h1>
+            <p style="color: var(--text-secondary);">Total transparency on how we handle your data.</p>
+        </div>
+
+        <div class="content-card">
+            <div class="policy-section">
+                <h2>🔐 Privacy Commitment</h2>
+                <p>At Password Sentinel, we believe privacy is a fundamental human right. Our extension is designed with a "Local-First" architecture, meaning all data processing happens on your device, not on our servers.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>📊 What We DO NOT Collect</h2>
+                <p>To be perfectly clear, we never have access to:</p>
+                <ul>
+                    <li><span class="badge danger">Never</span> Your passwords (neither analyzed nor generated).</li>
+                    <li><span class="badge danger">Never</span> Your browsing history.</li>
+                    <li><span class="badge danger">Never</span> Personally Identifiable Information (PII).</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>🌐 External Services (API)</h2>
+                <p>We use the "Have I Been Pwned" API exclusively for data breach detection. To ensure your anonymity:</p>
+                <ul>
+                    <li><span class="badge safe">Protected</span> We use <strong>k-anonymity</strong>.</li>
+                    <li><span class="badge safe">Partial Hash</span> We only send the first 5 characters of your password's SHA-1 hash.</li>
+                    <li><span class="badge safe">Anonymous</span> It is mathematically impossible to reverse this hash to get your original password.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>💾 Local Storage</h2>
+                <p>The extension uses <code>chrome.storage.local</code> solely to save your user preferences (like dark mode or default length settings). This data never leaves your Chrome browser.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>📧 Contact</h2>
+                <p>If you have any questions about this policy, please contact us at:</p>
+                <p><strong>Support Team</strong><br>Email: support@passwordsentinel.com</p>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 40px 0;">
+            
+            <p style="font-size: 13px; color: var(--text-secondary); text-align: center;">
+                Last updated: February 2024. Password Sentinel is an Open Source project.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

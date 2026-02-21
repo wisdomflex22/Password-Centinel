@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Sentinel - Security Simplified</title>
+    <meta name="description" content="Smart password protection for Chrome. Local-first privacy, military-grade encryption.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">Password Sentinel</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#tools" class="nav-link">Tools</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#download" class="nav-link">Download</a></li>
+            </ul>
+            <a href="https://chromewebstore.google.com/detail/fiephcocbhccfidlfnklglonoplmggcl?utm_source=item-share-cb" class="nav-btn-download" target="_blank">Get for Free</a>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge-new">v2.0 Available</span>
+                <h1 class="hero-title">
+                    Military-grade security.<br>
+                    <span class="gradient-text">Uncompromising simplicity.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    The Chrome extension that analyzes, protects, and generates credentials without ever leaving your browser. 
+                    Your data stays on your device. Always.
+                </p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">Add to Chrome</a>
+                    <a href="#tools" class="btn btn-secondary">Try Demo</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="glass-card">
+                    <div class="password-preview">
+                        <span class="hidden-pass">•••••••••••••••</span>
+                        <div class="security-dots">
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h4>Local Analysis</h4>
+                        <p>Real-time entropy evaluation via JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Control Center</h2>
+                <p>Total power and control over your credentials.</p>
+            </div>
+
+            <div class="control-center">
+                <div class="tool-tabs">
+                    <button class="tab-btn active" data-tool="analyzer">Analyzer</button>
+                    <button class="tab-btn" data-tool="generator">Generator</button>
+                </div>
+
+                <div id="analyzer-content" class="tool-panel active">
+                    <div class="input-group">
+                        <input type="text" id="webPasswordInput" class="main-input" placeholder="Type a password to analyze..." autocomplete="off">
+                    </div>
+                    
+                    <div class="strength-meter-container">
+                        <div class="meter-bar">
+                            <div id="strengthFillWeb" class="meter-fill"></div>
+                        </div>
+                        <div id="webPasswordFeedback" class="meter-label">Start typing...</div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-title">Length</span>
+                            <span class="stat-value" id="webLengthStat">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-title">Time to Crack</span>
+                            <span class="stat-value" id="webTimeToCrackStat">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-title">Complexity</span>
+                            <span class="stat-value" id="webSymbolStat">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-title">Status</span>
+                            <span class="stat-value" id="webStatusStat">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="generator-content" class="tool-panel">
+                    <div class="generated-display" id="webGeneratedPassword" title="Click to copy">
+                        H8k$mP9#vL2
+                    </div>
+                    
+                    <div class="controls-grid">
+                        <div class="control-toggles">
+                            <label class="toggle-row">
+                                <span>Uppercase (A-Z)</span>
+                                <input type="checkbox" id="webUseUppercase" checked>
+                            </label>
+                            <label class="toggle-row">
+                                <span>Lowercase (a-z)</span>
+                                <input type="checkbox" id="webUseLowercase" checked>
+                            </label>
+                            <label class="toggle-row">
+                                <span>Numbers (0-9)</span>
+                                <input type="checkbox" id="webUseNumbers" checked>
+                            </label>
+                            <label class="toggle-row">
+                                <span>Symbols (!@#)</span>
+                                <input type="checkbox" id="webUseSymbols" checked>
+                            </label>
+                        </div>
+                        
+                        <div class="length-control">
+                            <div class="range-header">
+                                <span>Length</span>
+                                <span id="webLengthValue">16</span>
+                            </div>
+                            <input type="range" id="webLengthRange" min="8" max="32" value="16" class="slider">
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="webGeneratePassword" class="btn btn-primary full-width">Generate New</button>
+                        <button id="webCopyPassword" class="btn btn-secondary full-width">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything you need.</h2>
+                <p>Designed to disappear until you need it.</p>
+            </div>
+            
+            <div class="bento-grid">
+                <div class="bento-card large dark">
+                    <div class="card-content">
+                        <div class="icon">🔒</div>
+                        <h3>Absolute Privacy</h3>
+                        <p>Our "Local-First" architecture ensures your passwords never leave your device. All analysis happens right on your machine.</p>
+                    </div>
+                </div>
+                <div class="bento-card">
+                    <div class="card-content">
+                        <div class="icon">⚡</div>
+                        <h3>Blazing Fast</h3>
+                        <p>Zero latency. Instant analysis protects you while you type.</p>
+                    </div>
+                </div>
+                <div class="bento-card">
+                    <div class="card-content">
+                        <div class="icon">👁️</div>
+                        <h3>Anti-Breach</h3>
+                        <p>K-anonymity verification against known leaked databases.</p>
+                    </div>
+                </div>
+                <div class="bento-card wide">
+                    <div class="card-content">
+                        <div class="icon">🎨</div>
+                        <h3>Native Design</h3>
+                        <p>Visually integrates into Chrome as if it were part of the OS.</p>
+                    </div>
+                </div>
+                <div class="bento-card">
+                    <div class="card-content">
+                        <div class="icon">📦</div>
+                        <h3>100% Free</h3>
+                        <p>No hidden subscriptions. Open Source.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Protect your digital life today.</h2>
+                <p>Join thousands of users browsing securely.</p>
+                <a href="https://chromewebstore.google.com/detail/fiephcocbhccfidlfnklglonoplmggcl?utm_source=item-share-cb" class="btn btn-primary big-btn" target="_blank">Add to Chrome</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Password Sentinel. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="mailto:contacto@eduolihez.com">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

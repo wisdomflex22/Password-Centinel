@@ -1,0 +1,303 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 450px; 
+    padding: 0;
+    margin: 0;
+    background-color: #f0f4f7; /* Fondo Azul-Gris muy claro */
+    color: #2c3e50; /* Texto: Gris oscuro */
+}
+
+.container {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 0; 
+}
+
+h1 {
+    color: #00b894; /* Acento: Teal Brillante */
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+h3 {
+    color: #34495e;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+/* --- ESTILO DE ÉNFASIS DE TEXTO --- */
+strong, b {
+    color: #00b894; /* Color de Acento para texto fuerte */
+    font-weight: 700;
+}
+
+em, i {
+    color: #536474; /* Gris suave para itálicas */
+    font-style: italic;
+}
+
+/* --- TABS --- */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ced4da;
+}
+
+.tab-button {
+    flex-grow: 1;
+    padding: 10px 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #6c757d;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease-in-out; /* Transición más suave */
+    position: relative;
+    overflow: hidden; /* Necesario para el efecto hover */
+    z-index: 1;
+}
+
+.tab-button:hover {
+    color: #00a880; 
+    background-image: linear-gradient(rgba(0, 184, 148, 0.05), rgba(0, 184, 148, 0.05)); /* Fondo muy sutil al pasar el ratón */
+}
+
+.tab-button.active {
+    color: #00b894;
+    border-bottom: 3px solid #00b894;
+    background-color: #f8f9fa; /* Fondo ligeramente diferente para el activo */
+    z-index: 2;
+}
+
+.tab-content {
+    display: none;
+    padding: 10px 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* --- INPUTS & BUTTONS --- */
+input[type="password"], input[type="text"], input[type="number"] {
+    width: 95%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    color: #2c3e50;
+}
+
+input:focus {
+    border-color: #00b894;
+    box-shadow: 0 0 0 0.2rem rgba(0, 184, 148, 0.3);
+    outline: none;
+}
+
+button {
+    background-color: #00b894;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 5px;
+    outline: none;
+}
+
+button:hover {
+    background-color: #00a880;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* --- INDICATORS & RESULTS --- */
+#strengthIndicator {
+    height: 20px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background-color: #e9ecef;
+    overflow: hidden;
+    width: 100%;
+    transition: width 0.3s, background-color 0.3s;
+    text-align: center;
+    font-size: 0.85em;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+#suggestions {
+    font-size: 0.9em;
+    color: #536474;
+    margin-bottom: 10px;
+}
+
+.result-box {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+}
+
+#generatedPasswordContainer input {
+    width: 80%;
+    margin: 0;
+    flex-grow: 1;
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: none;
+}
+
+#generatedPasswordContainer button {
+    margin-left: 10px;
+    flex-shrink: 0;
+    padding: 8px 10px;
+}
+
+/* --- SETTINGS & HISTORY --- */
+.setting {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.setting label {
+    flex-grow: 1;
+    margin-left: 8px;
+    color: #495057;
+}
+
+#passwordHistoryList, #credentialList {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+#passwordHistoryList li, #credentialList li {
+    padding: 10px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    word-break: break-word;
+}
+
+#passwordHistoryList li:last-child, #credentialList li:last-child {
+    border-bottom: none;
+}
+
+.history-item-details {
+    flex-grow: 1;
+}
+
+.history-item-actions button {
+    margin-left: 5px;
+    padding: 5px 8px;
+    font-size: 0.8em;
+}
+
+/* --- WARNING BANNERS --- */
+.warning-banner {
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #fff3cd; 
+    color: #856404; 
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.warning-banner button {
+    background-color: #e74c3c; /* Rojo de Alerta */
+    padding: 5px 10px;
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.warning-banner button:hover {
+    background-color: #c0392b;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.success-message {
+    color: #2ecc71;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.vault-state {
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* --- HEALTH SCORE --- */
+#healthScoreContainer p {
+    margin: 5px 0;
+    padding: 8px 10px;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.health-indicator {
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 12px;
+    color: #fff;
+    min-width: 65px;
+    text-align: center;
+}
+
+/* --- VAULT --- */
+#credentialList li input[type="text"] {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: default;
+    width: 150px;
+    font-family: monospace;
+    color: #000;
+}

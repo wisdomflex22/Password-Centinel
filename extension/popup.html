@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> <title>Password Centinel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="masterKeyBanner" class="warning-banner" style="display: none;">
+            ⚠️ **Clave Maestra Requerida** para usar la Bóveda. 
+            <button id="setupMasterKeyBtn">Configurar Ahora</button>
+        </div>
+
+        <h1>Password Centinel</h1>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="health">Salud</button>
+            <button class="tab-button" data-tab="analyzer">Análisis</button>
+            <button class="tab-button" data-tab="generator">Generador</button>
+            <button class="tab-button" data-tab="vault">Bóveda</button>
+            <button class="tab-button" data-tab="settings">Ajustes</button>
+        </div>
+
+        <div id="health" class="tab-content active">
+            <h2>Puntuación de Salud General</h2>
+            <div id="healthScoreContainer">
+                <p>Nivel de Seguridad: <span id="overallHealth" class="health-indicator">Cargando...</span></p>
+                <p>Contraseñas Almacenadas: <span id="vaultCount">0</span></p>
+                <p>⚠️ Contraseñas Comprometidas (HIBP): <span id="breachCount">0</span></p>
+                <p>🔄 Contraseñas Reutilizadas: <span id="reuseCount">0</span></p>
+                <p>🔑 Contraseñas Débiles: <span id="weakCount">0</span></p>
+            </div>
+            <button id="goToVaultBtn">Ver Bóveda</button>
+        </div>
+
+        <div id="analyzer" class="tab-content">
+            <h2>Análisis de Fortaleza</h2>
+            <input type="password" id="passwordInput" placeholder="Introduce tu contraseña">
+            <div id="strengthIndicator"></div>
+            <p id="suggestions"></p>
+            <button id="checkBreach">Verificar Brecha (HIBP)</button>
+            <div id="breachResult" class="result-box"></div>
+            <div id="historyContainer">
+                <h3>Historial de Contraseñas Generadas</h3>
+                <input type="text" id="historySearch" placeholder="Buscar en historial...">
+                <ul id="passwordHistoryList">
+                    </ul>
+            </div>
+        </div>
+
+        <div id="generator" class="tab-content">
+            <h2>Generador de Contraseñas</h2>
+            <div class="setting">
+                <label for="lengthInput">Longitud:</label>
+                <input type="number" id="lengthInput" value="16" min="8" max="64">
+            </div>
+            <div class="setting">
+                <input type="checkbox" id="includeUpper" checked>
+                <label for="includeUpper">Incluir Mayúsculas</label>
+            </div>
+            <div class="setting">
+                <input type="checkbox" id="includeNumbers" checked>
+                <label for="includeNumbers">Incluir Números</label>
+            </div>
+            <div class="setting">
+                <input type="checkbox" id="includeSymbols" checked>
+                <label for="includeSymbols">Incluir Símbolos</label>
+            </div>
+            <div class="setting advanced-setting">
+                <label for="customSymbols">Símbolos Personalizados (Opcional):</label>
+                <input type="text" id="customSymbols" placeholder="!@#$%^...">
+            </div>
+            <button id="generatePassword">Generar</button>
+            <div id="generatedPasswordContainer" class="result-box">
+                <input type="text" id="generatedPassword" readonly>
+                <button id="copyPassword">Copiar</button>
+            </div>
+        </div>
+
+        <div id="vault" class="tab-content">
+            <h2>Bóveda de Credenciales</h2>
+            <div id="vaultContent">
+                <div id="masterKeyLock" class="vault-state">
+                    <h3>Bóveda Bloqueada</h3>
+                    <p>Introduce tu Clave Maestra para acceder a tus credenciales cifradas.</p>
+                    <input type="password" id="masterKeyUnlockInput" placeholder="Clave Maestra">
+                    <button id="unlockVaultBtn">Desbloquear Bóveda</button>
+                    <p id="unlockError" class="error-message"></p>
+                </div>
+
+                <div id="credentialListContainer" class="vault-state" style="display: none;">
+                    <ul id="credentialList">
+                        </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="settings" class="tab-content">
+            <h2>Ajustes y Seguridad</h2>
+            <div id="masterKeySetup">
+                <h3>Configuración de Clave Maestra</h3>
+                <p class="warning-message">¡Advertencia! Esta clave es la única forma de acceder a tus contraseñas cifradas. No la olvides. **Si la pierdes, perderás el acceso a tus credenciales.**</p>
+                <input type="password" id="newMasterKeyInput" placeholder="Establecer Clave Maestra">
+                <button id="setMasterKeyBtn">Guardar Clave Maestra</button>
+                <p id="masterKeyStatus"></p>
+                <hr>
+                <button id="lockVaultBtn" style="display: none;">Bloquear Bóveda</button>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
